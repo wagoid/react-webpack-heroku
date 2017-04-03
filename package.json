@@ -4,7 +4,7 @@
   "description": "Sample react app using webpack and deploying to heroku",
   "main": "index.js",
   "scripts": {
-    "build": "rm ./public/* || true && NODE_ENV=${NODE_ENV:=production} ./node_modules/.bin/webpack --bail",
+    "build": "rm ./public/* || true && NODE_ENV=production ./node_modules/.bin/webpack --bail",
     "dev": "if [ -f .env ]; then source .env; fi && webpack-dashboard --port 9857 -- webpack-dev-server --devtool eval-source-map --progress --colors --hot --history-api-fallback --port ${DEV_PORT:-4200}",
     "start": "node ./server",
     "lint": "npm-run-all --parallel lint:* && echo $'  Lint free! \\360\\237\\215\\272'",
