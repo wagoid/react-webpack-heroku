@@ -11,7 +11,7 @@ deployment:
     commands:
       - git config --global user.email circleci@circleci.com
       - git config --global user.name CircleCI
-      - heroku git:remote -a react-webpack-deploy-sample
+      - heroku git:remote --ssh-git -a react-webpack-deploy-sample
       - npm run build
       - git checkout -b heroku-deploy
       - git add -f public/ && git commit -m 'Deploy public files'
