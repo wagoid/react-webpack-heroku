@@ -9,6 +9,8 @@ deployment:
   production:
     branch: master
     commands:
+      - git config --global user.email circleci@circleci.com
+      - git config --global user.name CircleCI
       - heroku git:remote -a react-webpack-deploy-sample
       - npm run build
       - git checkout -b heroku-deploy
