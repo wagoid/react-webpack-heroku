@@ -13,4 +13,4 @@ deployment:
       - npm run build
       - git checkout -b heroku-deploy
       - git add -f public/ && git commit -m 'Deploy public files'
-      - git push heroku master
+      - git push heroku heroku-deploy:master --force
