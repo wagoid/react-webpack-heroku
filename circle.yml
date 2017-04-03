@@ -1,0 +1,16 @@
+machine:
+  node:
+    version:
+      6.9.4
+test:
+  override:
+    - npm run lint
+deployment:
+  production:
+    branch: production
+    commands:
+      - heroku git:remote -a react-webpack-deploy-sample
+      - npm run build
+      - git checkout -b heroku-deploy
+      - git add -f public/ && git commit -m 'Deploy public files'
+      - git push heroku master
